@@ -13,11 +13,19 @@
     "keywords": [
         "xbnf"
     ],
+    "publisher": "Mai-Lapyst",
     "author": {
         "name": "Mai Lapyst",
         "url": "https://github.com/Mai-Lapyst"
     },
     "homepage": "https://github.com/Mai-Lapyst/xbnf-vscode",
+    "bugs": {
+        "url": "https://github.com/Mai-Lapyst/xbnf-vscode/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Mai-Lapyst/xbnf-vscode.git"
+    },
     "contributes": {
         "languages": [
             {

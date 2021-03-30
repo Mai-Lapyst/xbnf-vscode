@@ -1,0 +1,42 @@
+{
+    "name": "xbnf",
+    "displayName": "XBnf",
+    "description": "Xbnf is a bnf-like definition language",
+    "version": "0.0.1",
+    "license": "GPLv3",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "xbnf"
+    ],
+    "author": {
+        "name": "Mai Lapyst",
+        "url": "https://github.com/Mai-Lapyst"
+    },
+    "homepage": "https://github.com/Mai-Lapyst/xbnf-vscode",
+    "contributes": {
+        "languages": [
+            {
+                "id": "xbnf",
+                "aliases": [
+                    "x-bnf"
+                ],
+                "extensions": [
+                    ".xbnf"
+                ],
+                "configuration": "./xbnf.language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "xbnf",
+                "scopeName": "source.xbnf",
+                "path": "./syntaxes/xbnf.tmLanguage.json"
+            }
+        ]
+    }
+}

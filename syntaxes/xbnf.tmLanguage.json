@@ -1,0 +1,84 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "xbnf",
+    "scopeName": "source.xbnf",
+    "fileTypes": [
+        "xbnf"
+    ],
+    "patterns": [
+        { "include": "#comments" },
+        { "include": "#syntax" }
+    ],
+    "repository": {
+        "syntax": {
+            "patterns": [
+                { "include": "#symbol" },
+                { "include": "#string" },
+                { "include": "#regex" },
+                { "include": "#operators" }
+            ]
+        },
+
+        "operators": {
+            "name": "keyword.operator.xbnf",
+            "patterns": [
+                { "match": "\\|" },
+                { "match": "\\." },
+                { "match": "\\*" },
+                { "match": "\\?" },
+                { "match": "\\+" }
+            ],
+        },
+
+        "symbol": {
+            "patterns": [
+                {
+                    "match": "([A-Z]+)[^A-Za-z]",
+                    "captures": {
+                        "1": { "name": "entity.name.tag.xbnf" }
+                    }
+                },
+                {
+                    "match": "([a-zA-Z0-9]+)[^A-Za-z0-9]",
+                    "captures": {
+                        "1": { "name": "variable.name.xbnf" }
+                    }
+                }
+            ]
+        },
+
+        "string": {
+            "name": "string.quoted.double.xbnf",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.xbnf",
+                    "match": "\\\\."
+                }
+            ]
+        },
+
+        "regex": {
+            "name": "string.regexp.xbnf",
+            "begin": "/",
+            "end": "/"
+        },
+
+        "comments": {
+            "name": "comment.xbnf",
+            "patterns": [
+                {
+                    "name": "comment.line.xbnf",
+                    "begin": "#",
+                    "end": "$"
+                },
+                {
+                    "name": "comment.block.xbnf",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                }
+            ]
+        }
+    }
+}
